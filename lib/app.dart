@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 
 import './models/transaction.dart';
+import './widgets/transaction.dart';
 
 class App extends StatelessWidget {
-  final List<Transaction> transactions = [
-    Transaction(
+  final List<TransactionModel> transactions = [
+    TransactionModel(
       id: 't1',
       text: 'Groceries',
       amount: 100.20,
       date: DateTime.now(),
     ),
-    Transaction(
+    TransactionModel(
       id: 't2',
       text: 'Clothes',
       amount: 999,
@@ -35,15 +36,8 @@ class App extends StatelessWidget {
         Column(
           children: transactions
               .map(
-                (transaction) => Card(
-                  child: Container(
-                    margin: EdgeInsets.all(16),
-                    width: double.infinity,
-                    child: Text(
-                      transaction.text,
-                      textDirection: TextDirection.ltr,
-                    ),
-                  ),
+                (transaction) => Transaction(
+                  transaction: transaction,
                 ),
               )
               .toList(),
