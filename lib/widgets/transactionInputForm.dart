@@ -3,11 +3,9 @@ import 'package:flutter/material.dart';
 class TransactionInputForm extends StatelessWidget {
   final titleController = TextEditingController();
   final amountController = TextEditingController();
+  final Function submitForm;
 
-  void submitForm() {
-    print(titleController.text);
-    print(amountController.text);
-  }
+  TransactionInputForm(this.submitForm);
 
   @override
   Widget build(BuildContext context) {
@@ -27,12 +25,16 @@ class TransactionInputForm extends StatelessWidget {
               controller: titleController,
             ),
             TextField(
-                decoration: InputDecoration(
-                  labelText: 'Amount',
-                ),
-                controller: amountController),
+              decoration: InputDecoration(
+                labelText: 'Amount',
+              ),
+              controller: amountController,
+            ),
             FlatButton(
-              onPressed: submitForm,
+              onPressed: () => submitForm(
+                titleController.text,
+                amountController.text,
+              ),
               child: Text(
                 'Add Transaction',
                 textDirection: TextDirection.ltr,

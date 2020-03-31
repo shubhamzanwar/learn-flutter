@@ -4,7 +4,12 @@ import './models/transaction.dart';
 import './widgets/transaction.dart';
 import './widgets/transactionInputForm.dart';
 
-class App extends StatelessWidget {
+class App extends StatefulWidget {
+  @override
+  _AppState createState() => _AppState();
+}
+
+class _AppState extends State<App> {
   final List<TransactionModel> transactions = [
     TransactionModel(
       id: 't1',
@@ -20,6 +25,23 @@ class App extends StatelessWidget {
     ),
   ];
 
+  void addTransaction(String title, String amount) {
+    String id = "t${transactions.length}";
+    double formatedAmount = double.parse(amount);
+    DateTime date = DateTime.now();
+
+    TransactionModel newTransaction = TransactionModel(
+      id: id,
+      text: title,
+      amount: formatedAmount,
+      date: date,
+    );
+
+    setState(() {
+      transactions.add(newTransaction);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -34,7 +56,7 @@ class App extends StatelessWidget {
             ),
           ),
         ),
-        TransactionInputForm(),
+        TransactionInputForm(addTransaction),
         Column(
           children: transactions
               .map(
