@@ -32,7 +32,22 @@ class App extends StatelessWidget {
             ),
           ),
         ),
-        RaisedButton(onPressed: null, child: Text("Press me")),
+        Column(
+          children: transactions
+              .map(
+                (transaction) => Card(
+                  child: Container(
+                    margin: EdgeInsets.all(16),
+                    width: double.infinity,
+                    child: Text(
+                      transaction.text,
+                      textDirection: TextDirection.ltr,
+                    ),
+                  ),
+                ),
+              )
+              .toList(),
+        )
       ],
     );
   }
