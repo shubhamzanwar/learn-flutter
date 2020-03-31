@@ -27,7 +27,7 @@ class Transaction extends StatelessWidget {
               ),
               padding: EdgeInsets.all(10),
               child: Text(
-                transaction.amount.toString(),
+                "₹${transaction.amount}",
                 textDirection: TextDirection.ltr,
                 style: TextStyle(color: Colors.orange),
               ),
@@ -48,7 +48,7 @@ class Transaction extends StatelessWidget {
                   transaction.date.toString(),
                   textDirection: TextDirection.ltr,
                   style: TextStyle(
-                    color: Colors.black87,
+                    color: Colors.grey,
                     fontSize: 12
                   ),
                 )

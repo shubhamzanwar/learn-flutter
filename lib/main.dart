@@ -8,6 +8,7 @@ void main() {
       home: Scaffold(
         appBar: AppBar(
           title: Text("Expenses Manager"),
+          backgroundColor: Colors.purple,
         ),
         body: App(),
       ),

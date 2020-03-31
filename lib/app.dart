@@ -26,7 +26,7 @@ class App extends StatelessWidget {
         Container(
           width: double.infinity,
           child: Card(
-            color: Colors.blue,
+            color: Colors.purple,
             child: Text(
               "Bruhhhh",
               textDirection: TextDirection.ltr,
