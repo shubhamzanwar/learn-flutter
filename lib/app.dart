@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import './models/transaction.dart';
 import './widgets/transaction.dart';
+import './widgets/transactionInputForm.dart';
 
 class App extends StatelessWidget {
   final List<TransactionModel> transactions = [
@@ -33,6 +34,7 @@ class App extends StatelessWidget {
             ),
           ),
         ),
+        TransactionInputForm(),
         Column(
           children: transactions
               .map(
