@@ -23,6 +23,30 @@ class _AppState extends State<App> {
       amount: 999,
       date: DateTime.now(),
     ),
+    TransactionModel(
+      id: 't1',
+      text: 'Groceries',
+      amount: 100.20,
+      date: DateTime.now(),
+    ),
+    TransactionModel(
+      id: 't2',
+      text: 'Clothes',
+      amount: 999,
+      date: DateTime.now(),
+    ),
+    TransactionModel(
+      id: 't1',
+      text: 'Groceries',
+      amount: 100.20,
+      date: DateTime.now(),
+    ),
+    TransactionModel(
+      id: 't2',
+      text: 'Clothes',
+      amount: 999,
+      date: DateTime.now(),
+    ),
   ];
 
   void _addTransaction(String title, String amount) {
@@ -57,15 +81,18 @@ class _AppState extends State<App> {
           ),
         ),
         TransactionInputForm(_addTransaction),
-        Column(
-          children: transactions
-              .map(
-                (transaction) => Transaction(
-                  transaction: transaction,
-                ),
-              )
-              .toList(),
-        )
+        Container(
+          height: 500,
+          child: ListView.builder(
+            itemBuilder: (ctx, index) {
+              TransactionModel transaction = transactions[index];
+              return Transaction(
+                transaction: transaction,
+              );
+            },
+            itemCount: transactions.length,
+          ),
+        ),
       ],
     );
   }
