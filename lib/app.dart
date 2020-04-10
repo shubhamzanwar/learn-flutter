@@ -25,7 +25,7 @@ class _AppState extends State<App> {
     ),
   ];
 
-  void addTransaction(String title, String amount) {
+  void _addTransaction(String title, String amount) {
     String id = "t${transactions.length}";
     double formatedAmount = double.parse(amount);
     DateTime date = DateTime.now();
@@ -56,7 +56,7 @@ class _AppState extends State<App> {
             ),
           ),
         ),
-        TransactionInputForm(addTransaction),
+        TransactionInputForm(_addTransaction),
         Column(
           children: transactions
               .map(
