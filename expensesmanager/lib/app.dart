@@ -23,30 +23,6 @@ class _AppState extends State<App> {
       amount: 999,
       date: DateTime.now(),
     ),
-    TransactionModel(
-      id: 't1',
-      text: 'Groceries',
-      amount: 100.20,
-      date: DateTime.now(),
-    ),
-    TransactionModel(
-      id: 't2',
-      text: 'Clothes',
-      amount: 999,
-      date: DateTime.now(),
-    ),
-    TransactionModel(
-      id: 't1',
-      text: 'Groceries',
-      amount: 100.20,
-      date: DateTime.now(),
-    ),
-    TransactionModel(
-      id: 't2',
-      text: 'Clothes',
-      amount: 999,
-      date: DateTime.now(),
-    ),
   ];
 
   void _addTransaction(String title, String amount) {
