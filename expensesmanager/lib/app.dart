@@ -42,34 +42,59 @@ class _AppState extends State<App> {
     });
   }
 
+  void _showTransactionInputForm(BuildContext ctx) {
+    showModalBottomSheet(
+      context: ctx,
+      builder: (_) {
+        return TransactionInputForm(_addTransaction);
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          width: double.infinity,
-          child: Card(
-            color: Colors.purple,
-            child: Text(
-              "Bruhhhh",
-              textDirection: TextDirection.ltr,
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Expenses Manager"),
+        backgroundColor: Colors.purple,
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.add),
+            onPressed: () {_showTransactionInputForm(context);},
+          )
+        ],
+      ),
+      body: Column(
+        children: [
+          Container(
+            width: double.infinity,
+            child: Card(
+              color: Colors.purple,
+              child: Text(
+                "Bruhhhh",
+                textDirection: TextDirection.ltr,
+              ),
             ),
           ),
-        ),
-        TransactionInputForm(_addTransaction),
-        Container(
-          height: 500,
-          child: ListView.builder(
-            itemBuilder: (ctx, index) {
-              TransactionModel transaction = transactions[index];
-              return Transaction(
-                transaction: transaction,
-              );
-            },
-            itemCount: transactions.length,
+          Container(
+            height: 500,
+            child: ListView.builder(
+              itemBuilder: (ctx, index) {
+                TransactionModel transaction = transactions[index];
+                return Transaction(
+                  transaction: transaction,
+                );
+              },
+              itemCount: transactions.length,
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {_showTransactionInputForm(context);},
+        child: Icon(Icons.add),
+        backgroundColor: Colors.purple,
+      ),
     );
   }
 }
