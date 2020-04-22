@@ -56,7 +56,6 @@ class _AppState extends State<App> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Expenses Manager"),
-        backgroundColor: Colors.purple,
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.add),
@@ -69,7 +68,6 @@ class _AppState extends State<App> {
           Container(
             width: double.infinity,
             child: Card(
-              color: Colors.purple,
               child: Text(
                 "Bruhhhh",
                 textDirection: TextDirection.ltr,
@@ -93,7 +91,6 @@ class _AppState extends State<App> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {_showTransactionInputForm(context);},
         child: Icon(Icons.add),
-        backgroundColor: Colors.purple,
       ),
     );
   }

@@ -22,7 +22,7 @@ class Transaction extends StatelessWidget {
               ),
               decoration: BoxDecoration(
                 border: Border.all(
-                  color: Colors.orange,
+                  color: Theme.of(context).accentColor,
                   width: 2,
                 ),
               ),
@@ -30,7 +30,7 @@ class Transaction extends StatelessWidget {
               child: Text(
                 "₹${transaction.amount}",
                 textDirection: TextDirection.ltr,
-                style: TextStyle(color: Colors.orange),
+                style: TextStyle(color: Theme.of(context).accentColor),
               ),
             ),
             Column(
@@ -40,7 +40,7 @@ class Transaction extends StatelessWidget {
                   transaction.text,
                   textDirection: TextDirection.ltr,
                   style: TextStyle(
-                    color: Colors.orange,
+                    color: Theme.of(context).accentColor,
                     fontSize: 18,
                     fontWeight: FontWeight.w600,
                   ),
