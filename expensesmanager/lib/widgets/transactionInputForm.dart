@@ -23,6 +23,7 @@ class _TransactionInputFormState extends State<TransactionInputForm> {
     }
 
     widget.submitForm(titleText, amountText);
+    Navigator.of(context).pop();
   }
 
   @override
